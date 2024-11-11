@@ -21,7 +21,7 @@ function getNews() {
             "Dampak Negatif Merusak Kelestarian Lingkungan, Timbulkan Banyak Bencana",
             "Perlu diketahui bahwa kelestarian lingkungan adalah aspek penting yang harus menjadi perhatian seluruh masyarakat. Semua lapisan masyarakat, mulai dari individu, keluarga, hingga lembaga pemerintah dan bisnis, memiliki peran penting dalam mendukung kelestarian lingkungan.",
             getCurrentDate(),
-            "https://cdns.klimg.com/mav-prod-resized/720x/webp/newsCover/2023/11/28/1701137059166-3pn5s.jpeg",
+            "https://cdn.rri.co.id/berita/Bukittinggi/o/1715917227082-PHOTO-2024-05-12-13-00-02/gl9b5uz4v7ahbtw.jpeg",
             "Admin",
             NewsCategory.TEKNOLOGI),
 
@@ -30,7 +30,7 @@ function getNews() {
             "Dampak Negatif Merusak Kelestarian Lingkungan, Timbulkan Banyak Bencana",
             "Perlu diketahui bahwa kelestarian lingkungan adalah aspek penting yang harus menjadi perhatian seluruh masyarakat. Semua lapisan masyarakat, mulai dari individu, keluarga, hingga lembaga pemerintah dan bisnis, memiliki peran penting dalam mendukung kelestarian lingkungan.",
             getCurrentDate(),
-            "https://cdns.klimg.com/mav-prod-resized/720x/webp/newsCover/2023/11/28/1701137059166-3pn5s.jpeg",
+            "https://cdn.rri.co.id/berita/Bukittinggi/o/1715917227082-PHOTO-2024-05-12-13-00-02/gl9b5uz4v7ahbtw.jpeg",
             "Admin",
             NewsCategory.PENDIDIKAN),
 
@@ -39,7 +39,7 @@ function getNews() {
             "Dampak Negatif Merusak Kelestarian Lingkungan, Timbulkan Banyak Bencana",
             "Perlu diketahui bahwa kelestarian lingkungan adalah aspek penting yang harus menjadi perhatian seluruh masyarakat. Semua lapisan masyarakat, mulai dari individu, keluarga, hingga lembaga pemerintah dan bisnis, memiliki peran penting dalam mendukung kelestarian lingkungan.",
             getCurrentDate(),
-            "https://cdns.klimg.com/mav-prod-resized/720x/webp/newsCover/2023/11/28/1701137059166-3pn5s.jpeg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Vxb5sW9IvPnVs7EEIsdB99i-cV-67vuXhw&s",
             "Admin",
             NewsCategory.BENCANA_ALAM),
 
@@ -48,7 +48,7 @@ function getNews() {
             "Dampak Negatif Merusak Kelestarian Lingkungan, Timbulkan Banyak Bencana",
             "Perlu diketahui bahwa kelestarian lingkungan adalah aspek penting yang harus menjadi perhatian seluruh masyarakat. Semua lapisan masyarakat, mulai dari individu, keluarga, hingga lembaga pemerintah dan bisnis, memiliki peran penting dalam mendukung kelestarian lingkungan.",
             getCurrentDate(),
-            "https://cdns.klimg.com/mav-prod-resized/720x/webp/newsCover/2023/11/28/1701137059166-3pn5s.jpeg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVHb2-nQX2FxM_A-3eMLeijPkd7JBG2b0xvQ&s",
             "Admin",
             NewsCategory.POLITIK),
 
@@ -57,7 +57,7 @@ function getNews() {
             "Dampak Negatif Merusak Kelestarian Lingkungan, Timbulkan Banyak Bencana",
             "Perlu diketahui bahwa kelestarian lingkungan adalah aspek penting yang harus menjadi perhatian seluruh masyarakat. Semua lapisan masyarakat, mulai dari individu, keluarga, hingga lembaga pemerintah dan bisnis, memiliki peran penting dalam mendukung kelestarian lingkungan.",
             getCurrentDate(),
-            "https://cdns.klimg.com/mav-prod-resized/720x/webp/newsCover/2023/11/28/1701137059166-3pn5s.jpeg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVHb2-nQX2FxM_A-3eMLeijPkd7JBG2b0xvQ&s",
             "Admin",
             NewsCategory.HIBURAN),
     ];

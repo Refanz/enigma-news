@@ -14,7 +14,7 @@ function Footer(props) {
                     <box-icon name='instagram' type='logo' color="red"></box-icon>
                 </div>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col text-sm gap-2">
                 <h1 className="text-xl font-bold">Business</h1>
                 <p>Startup</p>
                 <p>Employee</p>
@@ -23,7 +23,7 @@ function Footer(props) {
                 <p>Markets</p>
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col text-sm gap-2">
                 <h1 className="text-xl font-bold">Technology</h1>
                 <p>Startup</p>
                 <p>Employee</p>
@@ -32,7 +32,7 @@ function Footer(props) {
                 <p>Markets</p>
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 text-sm">
                 <h1 className="text-xl font-bold">Travel</h1>
                 <p>Startup</p>
                 <p>Employee</p>
@@ -41,7 +41,7 @@ function Footer(props) {
                 <p>Markets</p>
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 text-sm">
                 <h1 className="text-xl font-bold">Sports</h1>
                 <p>Startup</p>
                 <p>Employee</p>

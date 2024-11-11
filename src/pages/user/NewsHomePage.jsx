@@ -6,12 +6,13 @@ import LatestNewsSection from "./components/news-homepage/news/LatestNewsSection
 import MustReadSection from "./components/news-homepage/news/MustReadSection.jsx";
 import TrendingSection from "./components/news-homepage/news/TrendingSection.jsx";
 import Footer from "./components/news-homepage/footer/Footer.jsx";
+import PropTypes from "prop-types";
 
-class NewsHomepage extends Component {
+class NewsHomePage extends Component {
     render() {
         return (
             <div className="flex flex-col items-center justify-center w-full gap-10 p-2">
-                <Navbar/>
+                <Navbar onChangePage={this.props.onChangePage}/>
                 <Hero/>
                 <TopNews/>
                 <LatestNewsSection/>
@@ -23,4 +24,9 @@ class NewsHomepage extends Component {
     }
 }
 
-export default NewsHomepage;
+export default NewsHomePage;
+
+NewsHomePage.propTypes = {
+    onChangePage: PropTypes.func
+}
+

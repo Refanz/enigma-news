@@ -1,5 +1,10 @@
 import React from 'react';
 import {ListBulletIcon} from "@heroicons/react/24/outline/index.js";
+import PropTypes from "prop-types";
+
+NavHeader.propTypes = {
+    onChangePage: PropTypes.func
+}
 
 function NavHeader(props) {
     return (
@@ -22,7 +27,7 @@ function NavHeader(props) {
                 <a className="btn btn-ghost text-xl text-red-600">EnigmaNews</a>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-ghost">Login</button>
+                <button className="btn btn-error text-white" onClick={() => props.onChangePage("login")}>Login</button>
             </div>
         </div>
     );
