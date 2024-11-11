@@ -3,6 +3,13 @@ import {PencilSquareIcon, TrashIcon} from "@heroicons/react/24/outline/index.js"
 import PropTypes from "prop-types";
 
 class NewsContentTable extends Component {
+
+    handleUpdateNews = (news) => {
+        this.props.onChangeSidebarMenu("UpdateNews", news);
+
+        console.log(news);
+    }
+
     render() {
         return (
             <>
@@ -55,7 +62,8 @@ class NewsContentTable extends Component {
                                         <div className="flex gap-1">
                                             <TrashIcon className="size-6 text-orange-500 cursor-pointer"
                                                        onClick={() => this.props.onDeleteNews(news.id)}/>
-                                            <PencilSquareIcon className="size-6 text-blue-500 cursor-pointer"/>
+                                            <PencilSquareIcon className="size-6 text-blue-500 cursor-pointer"
+                                                              onClick={() => this.handleUpdateNews(news)}/>
                                         </div>
                                     </td>
                                 </tr>

@@ -19,7 +19,10 @@ class NewsContent extends Component {
                     <NewsSearch/>
                 </div>
                 <div className="overflow-x-auto bg-white rounded-3xl p-4">
-                    <NewsContentTable news={this.props.news} onDeleteNews={this.props.onDeleteNews}/>
+                    <NewsContentTable news={this.props.news}
+                                      onDeleteNews={this.props.onDeleteNews}
+                                      onUpdateNews={this.props.onUpdateNews}
+                                      onChangeSidebarMenu={this.props.onChangeSidebarMenu}/>
                 </div>
             </div>
         );

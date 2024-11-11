@@ -2,17 +2,22 @@ import React, {Component} from 'react';
 
 import newsCategory from "../../../../data/newsCategory.js";
 import News from "../../../../data/news.js";
-import {nanoid} from "nanoid";
 import getCurrentDate from "../../../../utils/dateUtil.js";
 import PropTypes from "prop-types";
 
-class CreateNews extends Component {
+class UpdateNews extends Component {
 
-    state = {
-        title: "",
-        summary: "",
-        imageUrl: "",
-        category: ""
+    constructor(props) {
+        super(props);
+
+        const {title, summary, imageUrl, category} = this.props.tempNews;
+
+        this.state = {
+            title: (title) ? title : "",
+            summary: (summary) ? summary : "",
+            imageUrl: (imageUrl) ? imageUrl : "",
+            category: (category) ? category : ""
+        }
     }
 
     handleChangeInput = (event) => {
@@ -24,12 +29,12 @@ class CreateNews extends Component {
         }))
     }
 
-    handleCreateNews = (event) => {
+    handleUpdateNews = (event) => {
         event.preventDefault();
 
         const {title, summary, imageUrl, category} = this.state
 
-        this.props.onAddNews(new News(nanoid(), title, summary, getCurrentDate(), imageUrl, "Admin", category));
+        this.props.onUpdateNews(new News(this.props.tempNews.id, title, summary, getCurrentDate(), imageUrl, "Admin", category));
 
         this.resetForm();
     }
@@ -44,13 +49,12 @@ class CreateNews extends Component {
     }
 
     render() {
-
         const {title, summary, imageUrl, category} = this.state;
 
         return (
             <div className="flex flex-col gap-4">
-                <h1 className="text-3xl font-bold">Create News</h1>
-                <form className="flex flex-col gap-4" onSubmit={this.handleCreateNews}>
+                <h1 className="text-3xl font-bold">Update News</h1>
+                <form className="flex flex-col gap-4" onSubmit={this.handleUpdateNews}>
                     <label className="form-control">
                         <div className="label">
                             <span className="text-lg font-bold">Title</span>
@@ -91,7 +95,7 @@ class CreateNews extends Component {
                     </label>
                     <div>
                         <button
-                            className="bg-orange-600 p-3 text-white rounded-xl font-semibold hover:bg-orange-500">Create
+                            className="bg-orange-600 p-3 text-white rounded-xl font-semibold hover:bg-orange-500">Update
                             News
                         </button>
                     </div>
@@ -101,8 +105,10 @@ class CreateNews extends Component {
     }
 }
 
-export default CreateNews;
+export default UpdateNews;
 
-CreateNews.propTypes = {
-    onAddNews: PropTypes.func
+UpdateNews.propTypes = {
+    onAddNews: PropTypes.func,
+    onUpdateNews: PropTypes.func,
+    tempNews: PropTypes.object
 }

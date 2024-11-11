@@ -5,12 +5,14 @@ import Content from "./dashboard/Content.jsx";
 class DashboardPage extends Component {
 
     state = {
-        menu: ""
+        menu: "",
+        tempNews: null
     }
 
-    handleChangeSidebarMenu = (name) => {
+    handleChangeSidebarMenu = (name, news) => {
         this.setState(() => ({
-            menu: name
+            menu: name,
+            tempNews: news
         }));
     }
 
@@ -18,8 +20,12 @@ class DashboardPage extends Component {
         return (
             <div className="flex">
                 <Sidebar menu={this.state.menu} onChangeSidebarMenu={this.handleChangeSidebarMenu}/>
-                <Content menu={this.state.menu} news={this.props.news} onAddNews={this.props.onAddNews}
+                <Content menu={this.state.menu}
+                         news={this.props.news}
+                         tempNews={this.state.tempNews}
+                         onAddNews={this.props.onAddNews}
                          onDeleteNews={this.props.onDeleteNews}
+                         onUpdateNews={this.props.onUpdateNews}
                          onChangeSidebarMenu={this.handleChangeSidebarMenu}/>
             </div>
         );

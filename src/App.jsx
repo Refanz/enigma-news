@@ -3,7 +3,6 @@ import LoginPage from "./pages/admin/LoginPage.jsx";
 import toast, {Toaster} from "react-hot-toast";
 import {Component} from "react";
 import DashboardPage from "./pages/admin/DashboardPage.jsx";
-import {saveNews} from "./data/data.js";
 import showDeleteConfirm from "./utils/alertUtils.js";
 
 class App extends Component {
@@ -31,6 +30,29 @@ class App extends Component {
         })
     }
 
+    handleUpdateNews = (updatedNews) => {
+        const newNews = this.state.news.map((news) => {
+            if (news.id === updatedNews.id) {
+                news.title = updatedNews.title;
+                news.summary = updatedNews.summary;
+                news.publishedDate = updatedNews.publishedDate;
+                news.imageUrl = updatedNews.imageUrl;
+                news.author = updatedNews.author
+                news.category = updatedNews.category
+            }
+
+            return news;
+        });
+
+        this.setState(() => ({
+            news: [
+                ...newNews
+            ]
+        }), () => {
+            toast.success("Success update news")
+        });
+    }
+
     handleDeleteNews = (id) => {
         const currentNews = this.state.news.filter((news) => {
             if (news.id !== id) return news;
@@ -51,8 +73,10 @@ class App extends Component {
                 {this.state.page === "home" && <NewsHomePage onChangePage={this.handleChangePage}/>}
                 {this.state.page === "login" && <LoginPage/>}
                 {this.state.page === "dashboard" &&
-                    <DashboardPage news={this.state.news} onAddNews={this.handleAddNews}
-                                   onDeleteNews={this.handleDeleteNews}/>}
+                    <DashboardPage news={this.state.news}
+                                   onAddNews={this.handleAddNews}
+                                   onDeleteNews={this.handleDeleteNews}
+                                   onUpdateNews={this.handleUpdateNews}/>}
                 <Toaster/>
             </>
         )
