@@ -1,3 +1,7 @@
+const categories = [
+    "Politik", "Bencana Alam", "Olahraga", "Teknologi", "Pendidikan", "Hiburan"
+];
+
 const NewsCategory = Object.freeze({
     POLITIK: "Politik",
     BENCANA_ALAM: "Bencana Alam",
@@ -8,3 +12,9 @@ const NewsCategory = Object.freeze({
 });
 
 export default NewsCategory;
+
+export {categories};
+
+
+
+

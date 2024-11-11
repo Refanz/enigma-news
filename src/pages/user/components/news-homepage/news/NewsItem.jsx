@@ -15,6 +15,7 @@ function NewsItem(props) {
              onClick={() => props.onChangePage("detail", props.news)}>
             <figure>
                 <img
+                    className="w-full h-48 object-cover"
                     src={imageUrl}
                     alt="Shoes"/>
             </figure>

@@ -12,7 +12,7 @@ class NewsHomePage extends Component {
     render() {
         return (
             <div className="flex flex-col items-center justify-center w-full gap-10 p-2">
-                <Navbar onChangePage={this.props.onChangePage}/>
+                <Navbar onChangePage={this.props.onChangePage} onChangeCategory={this.props.onChangeCategory}/>
                 <Hero/>
                 <TopNews news={this.props.news} onChangePage={this.handleChangePage}/>
                 <LatestNewsSection news={this.props.news} onChangePage={this.props.onChangePage}/>

@@ -4,9 +4,9 @@ import toast, {Toaster} from "react-hot-toast";
 import {Component} from "react";
 import DashboardPage from "./pages/admin/DashboardPage.jsx";
 import showDeleteConfirm from "./utils/alertUtils.js";
-import {saveNews} from "./data/data.js";
 import {getNews} from "./data/news.js";
 import NewsDetail from "./pages/user/NewsDetail.jsx";
+import NewsList from "./pages/user/NewsList.jsx";
 
 class App extends Component {
 
@@ -15,7 +15,8 @@ class App extends Component {
             ...getNews()
         ],
         tempNews: null,
-        page: "home"
+        page: "home",
+        category: "",
     }
 
     handleChangePage = (page, news) => {
@@ -23,6 +24,14 @@ class App extends Component {
             ...prevState,
             page: page,
             tempNews: news
+        }));
+    }
+
+    handleChangeCategory = (category) => {
+        this.setState((prevState) => ({
+            ...prevState,
+            page: "category",
+            category: category
         }));
     }
 
@@ -34,7 +43,6 @@ class App extends Component {
             ]
         }), () => {
             toast.success("Success add news");
-            saveNews(this.state.news);
         })
     }
 
@@ -79,14 +87,24 @@ class App extends Component {
         return (
             <>
                 {this.state.page === "home" &&
-                    <NewsHomePage news={this.state.news} onChangePage={this.handleChangePage}/>}
+                    <NewsHomePage news={this.state.news} onChangePage={this.handleChangePage}
+                                  onChangeCategory={this.handleChangeCategory}/>}
+
                 {this.state.page === "login" && <LoginPage onChangePage={this.handleChangePage}/>}
+
                 {this.state.page === "dashboard" &&
                     <DashboardPage news={this.state.news}
                                    onAddNews={this.handleAddNews}
                                    onDeleteNews={this.handleDeleteNews}
                                    onUpdateNews={this.handleUpdateNews}/>}
                 {this.state.page === "detail" && <NewsDetail news={this.state.tempNews}/>}
+
+                {this.state.page === "category" &&
+                    <NewsList category={this.state.category}
+                              news={this.state.news}
+                              onChangePage={this.handleChangePage}
+                              onChangeCategory={this.handleChangeCategory}/>}
+
                 <Toaster/>
             </>
         )

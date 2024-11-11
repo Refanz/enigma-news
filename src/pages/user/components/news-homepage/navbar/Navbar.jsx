@@ -1,19 +1,13 @@
-import {Component} from 'react';
-import Divider from "../../../../../shared/components/Divider.jsx";
+import React from "react";
 import NavHeader from "./NavHeader.jsx";
-import NavTab from "./NavTab.jsx";
 import PropTypes from "prop-types";
 
-class Navbar extends Component {
-    render() {
-        return (
-            <nav className="w-full flex flex-col gap-2 items-center">
-                <NavHeader onChangePage={this.props.onChangePage}/>
-                {/*<Divider/>*/}
-                {/*<NavTab/>*/}
-            </nav>
-        );
-    }
+function Navbar(props) {
+    return (
+        <nav className="w-full flex flex-col gap-2 items-center">
+            <NavHeader onChangePage={props.onChangePage} onChangeCategory={props.onChangeCategory}/>
+        </nav>
+    );
 }
 
 export default Navbar;
