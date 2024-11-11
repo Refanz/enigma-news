@@ -4,18 +4,25 @@ import toast, {Toaster} from "react-hot-toast";
 import {Component} from "react";
 import DashboardPage from "./pages/admin/DashboardPage.jsx";
 import showDeleteConfirm from "./utils/alertUtils.js";
+import {saveNews} from "./data/data.js";
+import {getNews} from "./data/news.js";
+import NewsDetail from "./pages/user/NewsDetail.jsx";
 
 class App extends Component {
 
     state = {
-        news: [],
+        news: [
+            ...getNews()
+        ],
+        tempNews: null,
         page: "home"
     }
 
-    handleChangePage = (page) => {
+    handleChangePage = (page, news) => {
         this.setState((prevState) => ({
             ...prevState,
-            page: page
+            page: page,
+            tempNews: news
         }));
     }
 
@@ -27,6 +34,7 @@ class App extends Component {
             ]
         }), () => {
             toast.success("Success add news");
+            saveNews(this.state.news);
         })
     }
 
@@ -78,6 +86,7 @@ class App extends Component {
                                    onAddNews={this.handleAddNews}
                                    onDeleteNews={this.handleDeleteNews}
                                    onUpdateNews={this.handleUpdateNews}/>}
+                {this.state.page === "detail" && <NewsDetail news={this.state.tempNews}/>}
                 <Toaster/>
             </>
         )

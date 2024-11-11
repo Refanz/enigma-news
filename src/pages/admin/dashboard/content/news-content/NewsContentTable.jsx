@@ -6,8 +6,6 @@ class NewsContentTable extends Component {
 
     handleUpdateNews = (news) => {
         this.props.onChangeSidebarMenu("UpdateNews", news);
-
-        console.log(news);
     }
 
     render() {

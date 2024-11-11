@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from "prop-types";
 
 TopNews.propTypes = {
-    news: PropTypes.object
+    news: PropTypes.array
 }
 
 function TopNews(props) {
-    console.log(props.news)
-    const {title, summary, author, imageUrl, publishedDate, category} = props.news;
+    const {title, summary, author, imageUrl, publishedDate, category} = props.news.at(0);
 
     return (
-        <div className="card lg:card-side bg-base-100 w-full max-w-screen-xl">
+        <div className="card lg:card-side bg-base-100 w-full max-w-screen-xl hover:bg-gray-50 cursor-pointer">
             <figure className="text-start">
                 <img
                     className="rounded-xl w-96"

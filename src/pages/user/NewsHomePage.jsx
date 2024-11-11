@@ -14,10 +14,10 @@ class NewsHomePage extends Component {
             <div className="flex flex-col items-center justify-center w-full gap-10 p-2">
                 <Navbar onChangePage={this.props.onChangePage}/>
                 <Hero/>
-                <TopNews news={this.props.news}/>
-                <LatestNewsSection/>
-                <MustReadSection/>
-                <TrendingSection/>
+                <TopNews news={this.props.news} onChangePage={this.handleChangePage}/>
+                <LatestNewsSection news={this.props.news} onChangePage={this.props.onChangePage}/>
+                <MustReadSection news={this.props.news} onChangePage={this.handleChangePage}/>
+                <TrendingSection news={this.props.news} onChangePage={this.handleChangePage}/>
                 <Footer/>
             </div>
         );
