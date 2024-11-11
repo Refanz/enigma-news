@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
+import getComments from "../../../../../data/comment.js";
 
 class NewsComment extends Component {
 
     state = {
         comment: "",
-        comments: []
+        comments: [
+            ...getComments()
+        ]
     }
 
     handleChangeComment = (event) => {
@@ -39,7 +42,7 @@ class NewsComment extends Component {
                     </button>
                 </form>
 
-                <div className="flex flex-col gap-4 bg-gray-50 p-4 rounded-xl">
+                <div className="flex flex-col gap-4 bg-gray-50 p-4 rounded-xl h-72 overflow-y-scroll">
                     {
                         this.state.comments.map((comment, index) => {
                             return (
