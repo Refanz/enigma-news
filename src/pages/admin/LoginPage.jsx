@@ -60,6 +60,7 @@ class LoginPage extends Component {
 
     handleSubmit = (evt) => {
         evt.preventDefault();
+
         this.setState(() => ({
             isLoading: true
         }));
@@ -67,13 +68,25 @@ class LoginPage extends Component {
         setTimeout(() => {
             this.setState(() => ({
                 isLoading: false
-            }))
+            }));
 
-            console.log("Suksesss");
+            if (this.state.username === "admin" && this.state.password === "password") {
+                this.props.onChangePage("dashboard");
+                toast.success("Login Success");
+            } else {
+                toast.error("Login Gagal!");
+                this.resetForm();
+            }
 
-            this.props.onStatusChange(true);
-            toast.success("Login Success");
         }, 3000);
+    }
+
+    resetForm = () => {
+        this.setState((prevState) => ({
+            ...prevState,
+            username: "",
+            password: ""
+        }))
     }
 
     render() {
@@ -82,7 +95,8 @@ class LoginPage extends Component {
 
         return (
             <div className="flex flex-col justify-center items-center bg-gray-50 min-h-dvh p-4">
-                <form onSubmit={this.handleSubmit} className="flex flex-col md:w-[500px] w-full shadow bg-white rounded-md px-6">
+                <form onSubmit={this.handleSubmit}
+                      className="flex flex-col md:w-[500px] w-full shadow bg-white rounded-md px-6">
                     <h1 className="text-2xl text-center mt-4 font-bold text-red-600">Welcome Back</h1>
                     <p className="mt-4 text-center text-gray-600">Please login to your account</p>
                     {
@@ -122,7 +136,7 @@ class LoginPage extends Component {
 }
 
 LoginPage.propTypes = {
-    onStatusChange: PropTypes.func.isRequired
+    onChangePage: PropTypes.func.isRequired
 }
 
 export default LoginPage;

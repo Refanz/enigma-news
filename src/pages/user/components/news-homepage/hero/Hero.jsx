@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Hero(props) {
+function Hero() {
     return (
         <div className="max-w-screen-xl w-full bg-gray-200 text-center px-4 py-7 rounded-xl">
             <h1 className="text-sm font-semibold spacing text-gray-500">WELCOME TO ENIGMA NEWS</h1>

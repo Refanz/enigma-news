@@ -14,7 +14,7 @@ class NewsHomePage extends Component {
             <div className="flex flex-col items-center justify-center w-full gap-10 p-2">
                 <Navbar onChangePage={this.props.onChangePage}/>
                 <Hero/>
-                <TopNews/>
+                <TopNews news={this.props.news}/>
                 <LatestNewsSection/>
                 <MustReadSection/>
                 <TrendingSection/>
@@ -27,6 +27,7 @@ class NewsHomePage extends Component {
 export default NewsHomePage;
 
 NewsHomePage.propTypes = {
+    news: PropTypes.array,
     onChangePage: PropTypes.func
 }
 

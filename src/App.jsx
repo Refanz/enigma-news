@@ -9,7 +9,7 @@ class App extends Component {
 
     state = {
         news: [],
-        page: "dashboard"
+        page: "home"
     }
 
     handleChangePage = (page) => {
@@ -70,8 +70,9 @@ class App extends Component {
     render() {
         return (
             <>
-                {this.state.page === "home" && <NewsHomePage onChangePage={this.handleChangePage}/>}
-                {this.state.page === "login" && <LoginPage/>}
+                {this.state.page === "home" &&
+                    <NewsHomePage news={this.state.news} onChangePage={this.handleChangePage}/>}
+                {this.state.page === "login" && <LoginPage onChangePage={this.handleChangePage}/>}
                 {this.state.page === "dashboard" &&
                     <DashboardPage news={this.state.news}
                                    onAddNews={this.handleAddNews}
