@@ -7,7 +7,7 @@ function NewsDetail(props) {
     const {title, summary, author, imageUrl, publishedDate, category} = props.news;
 
     return (
-        <div className="flex flex-col justify-center w-full gap-10 p-2 max-w-screen-xl mx-auto">
+        <div className="flex flex-col justify-center w-full gap-10 p-2 overflow-x-hidden max-w-screen-xl mx-auto">
             <Navbar onChangePage={props.onChangePage}/>
             <div className="flex flex-col gap-4 items-center">
                 <h1 className="text-3xl font-bold">{title}</h1>
